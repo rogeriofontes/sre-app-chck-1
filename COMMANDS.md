@@ -9,10 +9,11 @@ curl http://localhost:8080/health
 
 --
 # Construir a imagem
-docker build -t sre-app:1.0.0 app/
+docker build -t sre-app:1.0.1 app/
 
 # Executar o container
-docker run -d -p 8080:8080 --name minha-app sre-app:1.0.0
+se precisar remover: docker rm -f sre-app
+docker run -d -p 8080:8080 --name sre-app sre-app:1.0.1
 
 # Testar
 curl http://localhost:8080/health
